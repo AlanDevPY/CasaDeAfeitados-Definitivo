@@ -27,6 +27,7 @@ import {
             <tr>
             <td>${contador++}</td>
             <td>${caja.servicio}</td>
+            <td>${caja.fecha}</td>
             <td>${caja.moneda}</td>
             <td class="text-center align-middle" style="max-height: 60px;height: 60px;">
                 <a class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" role="button" style="margin-left: 5px;">
