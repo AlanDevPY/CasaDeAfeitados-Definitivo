@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         }
 
         let totalCaja = document.getElementById('totalCaja')
-        totalCaja.textContent = sumaDeMontos.toFixed(3)
+        totalCaja.textContent = "Total en caja "+sumaDeMontos.toFixed(3)
 
 
 
