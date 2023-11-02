@@ -49,3 +49,6 @@
       console.error('Error al registrar servicio', error)
     }
   }
+
+  export const cajaDB = (callback) => onSnapshot(collection(db,'caja'),callback)
+  export const borrarItemCaja = (id) => deleteDoc(doc(db,'caja',id));
