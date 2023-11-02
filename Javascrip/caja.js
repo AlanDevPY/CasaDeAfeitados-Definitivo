@@ -2,10 +2,10 @@ import {
     cajaDB,
     borrarItemCaja
 
-  } from "./firebase.js";
+} from "./firebase.js";
 
-  window.addEventListener('DOMContentLoaded', async () => {
-    
+window.addEventListener('DOMContentLoaded', async () => {
+
     let tBody = document.getElementById('tBody')
     let contador = 1
 
@@ -14,16 +14,16 @@ import {
         let cajas = []
 
 
-        
+
         querySnapshot.forEach((doc) => {
             let caja = doc.data()
-            cajas.push({...caja, id: doc.id});
+            cajas.push({ ...caja, id: doc.id });
         });
-        
+
         // cajas.sort((a, b) => a.ticket.localeCompare(b.ticket));
 
-        cajas.forEach((caja) =>{
-            tr +=`
+        cajas.forEach((caja) => {
+            tr += `
             <tr>
             <td>${contador++}</td>
             <td>${caja.servicio}</td>
@@ -37,6 +37,15 @@ import {
         </tr>
             `
         })
+        var sumaDeMontos = 0;
+
+        for (let i = 0; i < cajas.length; i++) {
+            sumaDeMontos += parseFloat(cajas[i].moneda);
+        }
+
+        let totalCaja = document.getElementById('totalCaja')
+        totalCaja.textContent = sumaDeMontos.toFixed(3)
+
 
 
         tBody.innerHTML = tr;
@@ -51,4 +60,4 @@ import {
         });
 
     })
-  })
+})
