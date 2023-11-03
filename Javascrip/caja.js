@@ -56,6 +56,20 @@ window.addEventListener('DOMContentLoaded', async () => {
             btn.addEventListener("click", (event) => {
                 // Llamar a la función deletTask con el ID de la tarea asociado al botón
                 borrarItemCaja(event.target.dataset.id);
+                Toastify({
+                    text: "Servicio Eliminado",
+                    duration: 800,
+                    // destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    // close: true,
+                    gravity: "bottom", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                      background: "#117400",
+                    },
+                     // Callback after click
+                  }).showToast();
             });
         });
 
