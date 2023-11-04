@@ -7,13 +7,12 @@ import {
 window.addEventListener('DOMContentLoaded', async () => {
 
     let tBody = document.getElementById('tBody')
-    let contador = 1
-
+    
     cajaDB((querySnapshot) => {
         let tr = ''
         let cajas = []
-
-
+        
+        
 
         querySnapshot.forEach((doc) => {
             let caja = doc.data()
@@ -21,7 +20,8 @@ window.addEventListener('DOMContentLoaded', async () => {
         });
 
         // cajas.sort((a, b) => a.ticket.localeCompare(b.ticket));
-
+        let contador = 1
+        
         cajas.forEach((caja) => {
             tr += `
             <tr>
