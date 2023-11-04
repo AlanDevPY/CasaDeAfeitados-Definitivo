@@ -37,9 +37,37 @@ btnRegistrar.addEventListener('click', (e) => {
   });
 
   if (inputServicio.value === '' || inputMonto.value === '') {
-    alert("Favor completa todos los datos");
+    Toastify({
+      text: "Favor completa los datos",
+      duration: 2000,
+      // destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      // close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "#740000",
+      },
+       // Callback after click
+    }).showToast()
+    // alert("Favor completa todos los datos");
   } else {
     registrarServicio(inputServicio.value, moneda, inputDescripcion.value);
+    Toastify({
+      text: "Servicio Registrado",
+      duration: 2000,
+      // destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      // close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "#117400",
+      },
+       // Callback after click
+    }).showToast();
 
     // Resetear los campos del formulario
     inputServicio.value = '';
